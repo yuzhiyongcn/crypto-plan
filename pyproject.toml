@@ -1,0 +1,72 @@
+[project]
+name = "crypto-investment-tools"
+version = "1.0.0"
+description = "Free cryptocurrency data fetcher and investment tools"
+readme = "README_CRYPTO_FETCHER.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [
+    {name = "Crypto Investment Team"}
+]
+keywords = ["cryptocurrency", "bitcoin", "trading", "data-fetcher", "binance", "coingecko"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "ccxt>=4.1.0",
+    "python-binance>=1.0.19",
+    "requests>=2.31.0",
+    "pandas>=2.1.0",
+    "python-dotenv>=1.0.0",
+    "numpy>=1.24.0",
+    "pandas-ta>=0.4.71b0",
+    "schedule>=1.2.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/crypto-investment-tools"
+Documentation = "https://github.com/yourusername/crypto-investment-tools/blob/main/README_CRYPTO_FETCHER.md"
+Repository = "https://github.com/yourusername/crypto-investment-tools"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
+ignore = ["E501"]
+
+[tool.black]
+line-length = 100
+target-version = ['py39', 'py310', 'py311', 'py312']
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+

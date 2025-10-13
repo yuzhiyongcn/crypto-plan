@@ -1,0 +1,10 @@
+# Core dependencies for cryptocurrency data fetching
+ccxt>=4.1.0                  # Unified cryptocurrency exchange API
+python-binance>=1.0.19       # Official Binance API wrapper
+requests>=2.31.0             # HTTP library for API calls
+pandas>=2.1.0                # Data manipulation and analysis
+python-dotenv>=1.0.0         # Environment variable management
+
+# Optional dependencies
+numpy>=1.24.0                # Numerical computing (used by pandas)
+
