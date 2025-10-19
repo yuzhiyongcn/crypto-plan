@@ -100,7 +100,10 @@ class CryptoDataFetcher:
             vs_currency: 计价货币 (默认: 'USDT')
             
         返回:
-            包含价格信息的字典，失败则返回 None
+            包含价格信息的字典，失败则返回 None。返回的数据结构因数据源而异：
+            - Binance: {'symbol', 'price', 'timestamp', 'source'}
+            - CCXT: {'symbol', 'price', 'bid', 'ask', 'high_24h', 'low_24h', 'volume_24h', 'timestamp', 'source'}
+            - CoinGecko: {'symbol', 'price', 'change_24h', 'volume_24h', 'last_updated', 'source'}
         """
         try:
             if self.data_source == 'binance' and self.binance_client:
@@ -209,7 +212,14 @@ class CryptoDataFetcher:
             end_time: 结束时间戳（毫秒）（可选）
             
         返回:
-            包含以下列的 DataFrame: timestamp, open, high, low, close, volume
+            包含K线数据的 pandas.DataFrame，失败则返回 None。
+            DataFrame 包含以下列:
+            - timestamp (datetime): K线开盘时间
+            - open (float): 开盘价
+            - high (float): 最高价
+            - low (float): 最低价
+            - close (float): 收盘价
+            - volume (float): 成交量
         """
         try:
             if self.data_source == 'binance' and self.binance_client:
@@ -346,7 +356,8 @@ class CryptoDataFetcher:
             limit: 每个时间周期的K线数量
             
         返回:
-            时间周期到 DataFrame 的映射字典
+            一个字典，键是时间周期 (str)，值是包含K线数据的 pandas.DataFrame。
+            每个 DataFrame 的结构与 get_historical_klines 返回的相同。
         """
         results = {}
         
