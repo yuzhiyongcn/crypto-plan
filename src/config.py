@@ -8,9 +8,9 @@ GLASSNODE_API_KEY = 'YOUR_GLASSNODE_API_KEY'
 
 # Telegram Bot Credentials
 # Create a bot with @BotFather on Telegram to get your token
-TELEGRAM_BOT_TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN'
+TELEGRAM_BOT_TOKEN = '7584298835:AAFiqpV2hIx2r2XKBXIqN8-jr40z4O_lNlg'
 # Get your Chat ID by messaging your bot and visiting: https://api.telegram.org/bot<YourBOTToken>/getUpdates
-TELEGRAM_CHAT_ID = 'YOUR_TELEGRAM_CHAT_ID'
+TELEGRAM_CHAT_ID = '6352746475'
 
 # Email Credentials (Optional, if you want email alerts)
 # Note: For services like Gmail, you'll need to generate an "App Password"
